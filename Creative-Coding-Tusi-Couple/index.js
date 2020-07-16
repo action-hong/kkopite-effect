@@ -8,7 +8,7 @@ const delta = Math.PI * 2 / (fps * 10)
 
 let angle = 0
 
-const line = 1
+const line = 4
 
 function draw() {
   // 重新绘制
