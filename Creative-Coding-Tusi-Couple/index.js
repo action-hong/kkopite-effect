@@ -6,16 +6,29 @@ const r = R / 2
 const fps = 1000 / 60
 const delta = Math.PI * 2 / (fps * 10)
 
+const lines = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  .map(val => {
+    return {
+      tx: (val % 5 + 1) * 2.25 * R,
+      ty: (Math.floor(val / 5) + 1) * 2.25 * R,
+      line: val + 1
+    }
+  })
+
+console.log(lines)
+
 let angle = 0
 
-const line = 4
-
 function draw() {
-  // 重新绘制
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  lines.forEach(({ tx, ty, line }) => {
+    drawCircle(tx, ty, line)
+  })
+}
 
+function drawCircle(tx, ty, line) {
+  
   ctx.save()
-  ctx.translate(canvas.width / 2, canvas.height / 2)
+  ctx.translate(tx, ty)
 
   // 画大圆
   ctx.beginPath()
@@ -43,7 +56,8 @@ function draw() {
     const s = Math.sin(rad)
 
     const t_cx = cx * c + cy * s
-    const t_cy = cx * s + cy * -c
+    const t_cy = cx * -s + cy * c
+    console.log(t_cy, cx * s + cy * -c)
 
     // 画线
     ctx.beginPath()
@@ -74,6 +88,8 @@ function update() {
 }
 
 function frame() {
+  // 重新绘制
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
   draw()
   update()
   requestAnimationFrame(frame)
