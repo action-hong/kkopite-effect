@@ -15,8 +15,6 @@ const lines = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     }
   })
 
-console.log(lines)
-
 let angle = 0
 
 function draw() {
@@ -57,7 +55,6 @@ function drawCircle(tx, ty, line) {
 
     const t_cx = cx * c + cy * s
     const t_cy = cx * -s + cy * c
-    console.log(t_cy, cx * s + cy * -c)
 
     // 画线
     ctx.beginPath()
