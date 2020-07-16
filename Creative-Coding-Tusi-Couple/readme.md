@@ -4,7 +4,7 @@
 
 前几天逛dribbble，[看到一个很有意思的效果](https://dribbble.com/shots/13310012-Creative-Coding-Tusi-Couple) ，如下图：
 
-![effect](/Creative-Coding-Tusi-Couple/effect.gif)
+![effect](./effect.gif)
 
 网上搜索了一下才知道这东西叫做[图斯双圆](https://mathworld.wolfram.com/TusiCouple.html) ，下面让我们一步步分析，在浏览器上模拟绘制出这个效果。
 
@@ -81,7 +81,7 @@ function draw() {
 
 这里做了移动画布的操作，让大圆圆心处于（0,0）点，方便后续的计算。绘制出的图像如下所示：
 
-![p1](/Creative-Coding-Tusi-Couple/p1.png)
+![p1](./p1.png)
 
 然后我们通过不断改变angle变量，来使得小圆转动起来
 
@@ -102,7 +102,7 @@ requestAnimationFrame(frame)
 
 效果如下：
 
-![p2](/Creative-Coding-Tusi-Couple/p2.gif)
+![p2](./p2.gif)
 
 接下来我们来绘制直线和交点
 
@@ -151,7 +151,7 @@ if (cx > 0) {
 
 于是我们就画出我们想要的图了：
 
-![p3](/Creative-Coding-Tusi-Couple/p3.gif)
+![p3](./p3.gif)
 
 接下来我们只需要继续按照上面的方法，算出小圆与每条直线的交点并绘制出来，就可以绘制出本文一开始的效果了。
 
@@ -212,7 +212,7 @@ const t_cy = cx * -s + cy * c
 
 这样我们就可以画出最开始的效果了：
 
-![p4](/Creative-Coding-Tusi-Couple/p4.gif)
+![p4](./p4.gif)
 
 [详细代码](https://github.com/action-hong/kkopite-effect/tree/master/Creative-Coding-Tusi-Couple)
 
